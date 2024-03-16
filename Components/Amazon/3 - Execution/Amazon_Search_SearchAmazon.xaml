@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2274,1823</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2274,1698</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Amazon_Search_SearchAmazon_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,7 +117,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1758" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1633" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:String" Default="Amazon_Search_SearchAmazon" Name="ComponentName" />
@@ -144,13 +144,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="450,1427" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="450,1302" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1170" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1045" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,7 +180,6 @@
                 <uix:TargetAnchorable BrowserURL="https://www.amazon.com/s?k=lebron+witness&amp;page=4&amp;crid=2MW5F5IB284YP&amp;qid=1710605562&amp;sprefix=%2Caps%2C483&amp;ref=sr_pg_3" DesignTimeRectangle="279, 256, 789, 11605" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' parentid='search' tag='DIV' /&gt;" Guid="8223b175-5555-4daf-8e97-a7be573adcb1" InformativeScreenshot="4f5dceb0b8f0d5c63b6e4701c5b30f1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.com: Lebron Witness' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,125" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[in_Item.Split(&quot; &quot;c)(1)]" />
             <ui:FilterDataTable DataTable="[dt_Item]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="354,201" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_FilteredItem]" SelectColumnsMode="Remove">
               <ui:FilterDataTable.Filters>
                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
