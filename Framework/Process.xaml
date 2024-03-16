@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>686,1162</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2274,1162</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -132,86 +132,91 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
-        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
       </Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID1">
+      <FlowStep x:Name="__ReferenceID2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,137.5</av:Point>
             <av:Size x:Key="ShapeSize">200,25</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,162.5 300,227.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">300,162.5 300,197.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;People Queue: &quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]" />
         <FlowStep.Next>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,227.5</av:Point>
+                <av:Point x:Key="ShapeLocation">200,197.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,25</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,222.5 300,267.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get Text Input - Sequence" sap:VirtualizedContainerService.HintSize="512,950" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <ui:ReadTextFile File="{x:Null}" Content="[ExtractedText]" DisplayName="Read Text File" FileName="[&quot;Data\Input\&quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ReadTextFile File="{x:Null}" Content="[ExtractedText]" DisplayName="Read Text File" FileName="[&quot;Data\Input\&quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="ReadTextFile_2">
+            </ui:ReadTextFile>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">200,267.5</av:Point>
+                    <av:Size x:Key="ShapeSize">200,25</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-              </ui:ReadTextFile>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,742" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Split(ExtractedText, Environment.NewLine)]">
-                <ui:ForEach.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,555" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="variable1" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="CurrentItem - Log Message" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[currentItem]" />
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Amazon_Search_SearchAmazon.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\Amazon\3 - Execution\Amazon_Search_SearchAmazon.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Item">[currentItem.ToString]</InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_SortedItem">[dt_Item]</OutArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
+                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,719" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ExtractedText, Environment.NewLine)]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,555" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="variable1" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel_Write_ItemDetails.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\Excel\Excel_Write_ItemDetails.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_SortedItem">[dt_Item]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_People">[in_TransactionItem.SpecificContent("Name").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Item">[currentItem.ToString]</InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEach.Body>
-              </ui:ForEach>
-            </Sequence>
+                        <ui:LogMessage DisplayName="CurrentItem - Log Message" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Searching &quot; + currentItem.ToString]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Amazon_Search_SearchAmazon.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\Amazon\3 - Execution\Amazon_Search_SearchAmazon.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Item">[currentItem.ToString]</InArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_SortedItem">[dt_Item]</OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel_Write_ItemDetails.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\Excel\Excel_Write_ItemDetails.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_SortedItem">[dt_Item]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_People">[in_TransactionItem.SpecificContent("Name").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_Item">[currentItem.ToString]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+              </FlowStep>
+            </FlowStep.Next>
           </FlowStep>
         </FlowStep.Next>
       </FlowStep>
       <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
     </Flowchart>
   </Sequence>
 </Activity>
