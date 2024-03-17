@@ -1,11 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Amazon_Search_SearchAmazon" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Amazon_Search_SearchAmazon" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Item" Type="InArgument(x:String)" />
+    <x:Property Name="out_dt_SortedItem" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2274,1222</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2274,1274</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Amazon_Search_SearchAmazon_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,10 +118,10 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Search Amazon base on the current item from text file and perform extraction, filtering and sorting of data table" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1157" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Perform extraction, filtering and sorting of data table" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1209" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
-      <Variable x:TypeArguments="x:String" Default="Amazon_Search_SearchAmazon" Name="ComponentName" />
+      <Variable x:TypeArguments="x:String" Default="Amazon_Extract_ItemDetails" Name="ComponentName" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_FilteredItem" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -145,34 +146,60 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="450,784" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="450,847" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,527" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,590" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'All'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,258" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="ba3d81ab-b56e-47b2-9721-fe7157364015" Text="[in_Item]" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.amazon.com/" CvElementArea="289, 155, 364, 42" CvType="InputBox" DesignTimeRectangle="289, 106, 365, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' type='text' class='nav-input nav-progressive-attribute' placeholder='Search Amazon' aaname='Search Amazon' /&gt;" Guid="b2a8cf7f-0863-4ee8-8ae6-f32614eececf" InformativeScreenshot="02d558b3b44ea4c0dd94811a8c57706b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.com. Spend less. Smile more.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CvElementArea="235, 156, 54, 42" CvType="InputBox" DesignTimeRectangle="248, 109, 19, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl id='nav-search-label-id' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nav-search-label-id' tag='SPAN' type='' class='nav-search-label nav-progressive-content' aaname='All' check:innerText='All' /&gt;" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go'" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.amazon.com/" CvElementArea="652, 155, 49, 43" CvType="Button" DesignTimeRectangle="654, 157, 45, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='nav-search-submit-button' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nav-search-submit-button' tag='INPUT' type='submit' class='nav-input nav-progressive-attribute' aaname='Go' check:text='Go' /&gt;" Guid="80b78bde-6917-4237-806f-a48759351b44" InformativeScreenshot="9fd85fc8df30efac6974fab30931edfe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.com. Spend less. Smile more.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Item]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='URL'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Price'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Rating'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='No. of Ratings'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='i' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="30" ScopeIdentifier="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V3">
+              <uix:NExtractData.NextLink>
+                <uix:TargetAnchorable BrowserURL="https://www.amazon.com/s?k=Sony+A6700&amp;crid=4QS9E65RY20Z&amp;sprefix=sony+a6700%2Caps%2C328&amp;ref=nb_sb_noss_1" CvElementArea="843, 528, 17, 21" CvTextArea="811, 532, 31, 13" CvTextArgument="Next" CvType="ArrowButton" DesignTimeRectangle="786, 515, 95, 48" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='Go to next page, page 2' aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Go to next page, page 2' aria-role='button' tag='A' type='' class='s-pagination-item s-pagination-next s-pagination-button s-pagination-button-accessibility s-pagination-separator' aaname='Next' check:innerText='Next' /&gt;" Guid="b6f9a46c-23d1-4554-a7de-03a0a7ad742e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.com : Sony A6700' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+              </uix:NExtractData.NextLink>
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="279, -5244, 789, 6535" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' parentid='search' tag='DIV' /&gt;" Guid="8867aabe-e11b-40a3-a001-f6df589132e3" InformativeScreenshot="2e889fb5121716ead29d187584d1761b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.com : sony a6700' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <ui:FilterDataTable DataTable="[dt_Item]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="354,201" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_FilteredItem]" SelectColumnsMode="Remove">
+              <ui:FilterDataTable.Filters>
+                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                  <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                    <ui:FilterOperationArgument.Column>
+                      <InArgument x:TypeArguments="x:String">["Name"]</InArgument>
+                    </ui:FilterOperationArgument.Column>
+                    <ui:FilterOperationArgument.Operand>
+                      <InArgument x:TypeArguments="x:String">[in_Item.Split(" "c)(1)]</InArgument>
+                    </ui:FilterOperationArgument.Operand>
+                  </ui:FilterOperationArgument>
+                  <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                    <ui:FilterOperationArgument.Column>
+                      <InArgument x:TypeArguments="x:String">["Name"]</InArgument>
+                    </ui:FilterOperationArgument.Column>
+                    <ui:FilterOperationArgument.Operand>
+                      <InArgument x:TypeArguments="x:String">[System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(in_Item.Split(" "c)(1))]</InArgument>
+                    </ui:FilterOperationArgument.Operand>
+                  </ui:FilterOperationArgument>
+                </scg:List>
+              </ui:FilterDataTable.Filters>
+              <ui:FilterDataTable.SelectColumns>
+                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                  <x:Null />
+                </scg:List>
+              </ui:FilterDataTable.SelectColumns>
+            </ui:FilterDataTable>
+            <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" DataTable="[dt_FilteredItem]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="354,105" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[out_dt_SortedItem]" SortOrder="Descending">
+              <ui:SortDataTable.ColumnIndex>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="2" />
+                </InArgument>
+              </ui:SortDataTable.ColumnIndex>
+            </ui:SortDataTable>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

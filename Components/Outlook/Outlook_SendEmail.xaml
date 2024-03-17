@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2274,1051</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2274,974</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Outlook_SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,7 +100,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Attach and send the output files to the respective recipient" DisplayName="Outlook_SendEmail" sap:VirtualizedContainerService.HintSize="512,986" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Attach and send the output files to the respective recipient" DisplayName="Outlook_SendEmail" sap:VirtualizedContainerService.HintSize="514,857" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Outlook_SendEmail" Name="ComponentName" />
       <Variable x:TypeArguments="s:String[]" Name="Attachments" />
@@ -111,28 +111,15 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Running - Log Message" sap:VirtualizedContainerService.HintSize="450,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Running &quot; + ComponentName]" />
-    <Sequence DisplayName="Pre-Condition - Sequence" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Running - Log Message" sap:VirtualizedContainerService.HintSize="452,65" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Running &quot; + ComponentName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </Sequence>
-    <Assign sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[Attachments]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(in_OutputPath)]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[Attachments]" Body="Attached here are the Output Files" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="450,192" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Final Project" To="[in_Recipient]">
-      <ui:SendOutlookMail.Files>
-        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-      </ui:SendOutlookMail.Files>
-    </ui:SendOutlookMail>
-    <Sequence sap:VirtualizedContainerService.HintSize="450,65" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    </ui:LogMessage>
+    <Sequence DisplayName="Pre-Condition - Sequence" sap:VirtualizedContainerService.HintSize="452,65" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -140,6 +127,45 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <ui:LogMessage DisplayName="Completed - Log Message" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Completed &quot; + ComponentName]" />
+    <Assign sap:VirtualizedContainerService.HintSize="452,122" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[Attachments]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(in_OutputPath)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,373" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[Attachments]" Body="Attached here are the Output Files" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Final Project" To="[in_Recipient]">
+            <ui:SendOutlookMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </ui:SendOutlookMail.Files>
+          </ui:SendOutlookMail>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <Sequence sap:VirtualizedContainerService.HintSize="452,65" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Sequence>
+    <ui:LogMessage DisplayName="Completed - Log Message" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Completed &quot; + ComponentName]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>
