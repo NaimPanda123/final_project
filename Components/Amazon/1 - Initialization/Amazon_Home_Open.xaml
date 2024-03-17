@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2274,974</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>887,902</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Amazon_Home_Open_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,7 +123,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="450,359" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="False" ScopeGuid="206a04f4-a1c6-44a2-bf74-5cb4fc5ab53a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="450,359" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="False" ScopeGuid="206a04f4-a1c6-44a2-bf74-5cb4fc5ab53a" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
