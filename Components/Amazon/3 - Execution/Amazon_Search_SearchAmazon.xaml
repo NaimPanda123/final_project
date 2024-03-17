@@ -117,7 +117,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Search Amazon base on the current item from text file and perform extraction, filtering and sorting of data table" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1157" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Search Amazon base on the current item from text file and perform extraction, filtering and sorting of data table" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1157" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:String" Default="Amazon_Search_SearchAmazon" Name="ComponentName" />
