@@ -120,7 +120,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="634,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <Flowchart sap:VirtualizedContainerService.HintSize="634,637" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap:VirtualizedContainerService.HintSize="634,660" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,24 +137,31 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,137.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,25</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,162.5 300,197.5</av:PointCollection>
+            <av:Size x:Key="ShapeSize">200,67</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,204.5 300,259</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;People Queue: &quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]" />
+        <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current queue from Orchestrator" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;People Queue: &quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:LogMessage>
         <FlowStep.Next>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,197.5</av:Point>
-                <av:Size x:Key="ShapeSize">200,25</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,222.5 300,267.5</av:PointCollection>
+                <av:Point x:Key="ShapeLocation">200,259</av:Point>
+                <av:Size x:Key="ShapeSize">200,82</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,341 300,387.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadTextFile File="{x:Null}" Content="[ExtractedText]" DisplayName="Read Text File" FileName="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_3">
+            <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Read text file from InputPath base on current queue from Orchestrator " Content="[ExtractedText]" DisplayName="Read Text File" FileName="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="ReadTextFile_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ReadTextFile>
@@ -162,11 +169,11 @@
               <FlowStep x:Name="__ReferenceID1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">200,267.5</av:Point>
-                    <av:Size x:Key="ShapeSize">200,25</av:Size>
+                    <av:Point x:Key="ShapeLocation">200,387.5</av:Point>
+                    <av:Size x:Key="ShapeSize">200,67</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,719" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ExtractedText, Environment.NewLine)]">
+                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop inside the text file and get current item one by one" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,750" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ExtractedText, Environment.NewLine)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -206,6 +213,11 @@
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </FlowStep>
             </FlowStep.Next>
