@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2274,1503</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>887,1503</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Excel_Write_ItemDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -162,7 +162,7 @@
                         <ui:AlignmentOptions HorizontalAlignment="xlHAlignCenter" VerticalAlignment="xlVAlignCenter" WrapText="False" />
                       </ueab:FormatRangeX.Alignment>
                       <ueab:FormatRangeX.Font>
-                        <ui:FontOptions Color="Black" FillColor="Aqua" FontFamilyName="Calibri" Size="10" Style="Regular" UnderlineStyle="None" />
+                        <ui:FontOptions Color="White" FillColor="DarkGreen" FontFamilyName="Calibri" Size="10" Style="Regular" UnderlineStyle="None" />
                       </ueab:FormatRangeX.Font>
                       <ueab:FormatRangeX.Format>
                         <ueab:GeneralFormat />
