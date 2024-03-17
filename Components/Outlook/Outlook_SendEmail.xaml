@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>887,922</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1083</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Outlook_SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,7 +100,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Attach and send the output files to the respective recipient" DisplayName="Outlook_SendEmail" sap:VirtualizedContainerService.HintSize="514,857" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description&#xD;&#xA;Attach and send the output files to the respective recipient&#xD;&#xA;&#xD;&#xA;Input Arguments:&#xD;&#xA;in_Recipient&#xD;&#xA;in_OutputPath&#xD;&#xA;&#xD;&#xA;Output Arguments:&#xD;&#xA;&#xD;&#xA;Pre-Condition:&#xD;&#xA;&#xD;&#xA;Post-Condition:" DisplayName="Outlook_SendEmail" sap:VirtualizedContainerService.HintSize="514,1018" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Outlook_SendEmail" Name="ComponentName" />
       <Variable x:TypeArguments="s:String[]" Name="Attachments" />

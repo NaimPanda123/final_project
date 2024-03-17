@@ -113,6 +113,7 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExtractedText" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsFileExist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -121,10 +122,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="634,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <Flowchart sap:VirtualizedContainerService.HintSize="634,672" sap2010:WorkflowViewState.IdRef="Flowchart_1">
-      <Flowchart.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="FileExist" />
-      </Flowchart.Variables>
+    <Flowchart sap:VirtualizedContainerService.HintSize="634,649" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,7 +160,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">300,336.5 300,386.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FileExistsX sap2010:Annotation.AnnotationText="Check if the txt from InputPath containing the queue form Orchestrator exist" DisplayName="File Exists" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]">
+            <ui:FileExistsX sap2010:Annotation.AnnotationText="Check if the txt from InputPath containing the queue form Orchestrator exist" DisplayName="File Exists" Exists="[IsFileExist]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +176,7 @@
                     <av:Size x:Key="ShapeSize">200,82</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If sap2010:Annotation.AnnotationText="If txt from InputPath containing the queue form Orchestrator exist" Condition="[FileExist]" sap:VirtualizedContainerService.HintSize="826,1551" sap2010:WorkflowViewState.IdRef="If_1">
+                <If sap2010:Annotation.AnnotationText="If txt from InputPath containing the queue form Orchestrator exist" Condition="[IsFileExist]" sap:VirtualizedContainerService.HintSize="826,1551" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

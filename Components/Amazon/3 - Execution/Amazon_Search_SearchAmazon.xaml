@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2274,1222</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1372</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Amazon_Search_SearchAmazon_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,7 +117,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Search Amazon base on the current item from text file and perform extraction, filtering and sorting of data table" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1157" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xD;&#xA;Search Amazon base on the current item from text file and perform extraction, filtering and sorting of data table&#xD;&#xA;&#xD;&#xA;Input Arguments:&#xD;&#xA;in_Item&#xD;&#xA;&#xD;&#xA;Output Arguments:&#xD;&#xA;&#xD;&#xA;Pre-Condition:&#xD;&#xA;&#xD;&#xA;Post-Condition:" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="512,1307" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:String" Default="Amazon_Search_SearchAmazon" Name="ComponentName" />

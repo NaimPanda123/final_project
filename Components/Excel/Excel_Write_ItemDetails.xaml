@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>887,1503</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1698</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Excel_Write_ItemDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file" DisplayName="Excel_Write_ItemDetails" sap:VirtualizedContainerService.HintSize="693,1438" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;in_dt_SortedItem&#xA;in_People&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Excel_Write_ItemDetails" sap:VirtualizedContainerService.HintSize="693,1633" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Excel_Write_ItemDetails" Name="ComponentName" />
     </Sequence.Variables>

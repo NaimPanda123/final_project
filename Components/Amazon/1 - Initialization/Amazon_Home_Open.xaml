@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>887,902</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1048</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Amazon_Home_Open_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open Amazon website" DisplayName="Amazon_Home_Open" sap:VirtualizedContainerService.HintSize="512,837" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xD;&#xA;Open Amazon website&#xD;&#xA;&#xD;&#xA;Input Arguments:&#xD;&#xA;in_AmazonURL&#xD;&#xA;&#xD;&#xA;Output Arguments:&#xD;&#xA;&#xD;&#xA;Pre-Condition:&#xD;&#xA;&#xD;&#xA;Post-Condition:" DisplayName="Amazon_Home_Open" sap:VirtualizedContainerService.HintSize="512,983" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Amazon_Home_Open" Name="ComponentName" />
     </Sequence.Variables>
