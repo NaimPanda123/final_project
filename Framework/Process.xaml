@@ -120,7 +120,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="634,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <Flowchart sap:VirtualizedContainerService.HintSize="634,660" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap:VirtualizedContainerService.HintSize="634,637" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,7 +141,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,162.5 300,197.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;People Queue: &quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;People Queue: &quot; + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString]" />
         <FlowStep.Next>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
@@ -166,16 +166,13 @@
                     <av:Size x:Key="ShapeSize">200,25</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ExtractedText, Environment.NewLine)]">
+                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="450,719" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ExtractedText, Environment.NewLine)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
                       </ActivityAction.Argument>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,555" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:String" Name="variable1" />
-                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -198,7 +195,7 @@
                             <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_SortedItem">[dt_Item]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_People">[in_TransactionItem.SpecificContent("Name").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_Item">[currentItem.ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Config">[in_Config("OutputPath").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_OutputPath">[in_Config("OutputPath").ToString]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
