@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1188,1078</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1078</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -169,10 +169,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:FileExistsX>
             <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                <FlowDecision.Condition>
-                  <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="IsFileExist" />
-                </FlowDecision.Condition>
+              <FlowDecision x:Name="__ReferenceID5" Condition="[IsFileExist]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -200,7 +197,7 @@
                             <av:Size x:Key="ShapeSize">200,67</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop inside the text file and get current item one by one" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Split(ExtractedText, Environment.NewLine)]">
+                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop inside the text file and get current item one by one" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="730,956" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Split(ExtractedText, Environment.NewLine)]">
                           <ui:ForEach.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -291,12 +288,20 @@
                                                     <av:Size x:Key="ShapeSize">200,127</av:Size>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file" DisplayName="Excel_Write_ItemDetails.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,127" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Components\Excel\Excel_Write_ItemDetails.xaml">
+                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file" DisplayName="Excel_Write_ItemDetails.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Components\Excel\Excel_Write_ItemDetails.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_SortedItem">[dt_Item]</InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="in_People">[in_TransactionItem.SpecificContent("Name").ToString]</InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Item">[currentItem.ToString]</InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="in_OutputPath">[in_Config("OutputPath").ToString]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_People">
+                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString" />
+                                                    </InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Item">
+                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentItem.ToString" />
+                                                    </InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="in_OutputPath">
+                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OutputPath&quot;).ToString" />
+                                                    </InArgument>
+                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Item">
+                                                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Item" />
+                                                    </InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
