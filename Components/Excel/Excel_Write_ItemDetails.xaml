@@ -105,7 +105,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;in_dt_SortedItem&#xA;in_People&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Excel_Write_ItemDetails" sap:VirtualizedContainerService.HintSize="693,1967" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;in_dt_SortedItem&#xA;in_People&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition&#xA;&#xA;Post-Condition" DisplayName="Excel_Write_ItemDetails" sap:VirtualizedContainerService.HintSize="693,1967" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Excel_Write_ItemDetails" Name="ComponentName" />
     </Sequence.Variables>
