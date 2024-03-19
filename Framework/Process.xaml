@@ -510,7 +510,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">110.5,729.5 110.5,779.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current index and item from text file" DisplayName="Current Index/Item - Log Message" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Current Item (&quot; + CurrentIndex.toString + &quot;) &quot; + CurrentItem]">
+                                    <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current index and item from text file" DisplayName="Current Index/Item - Log Message" sap:VirtualizedContainerService.HintSize="334,172" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Searching Item (&quot; + CurrentIndex.toString + &quot;) &quot; + CurrentItem]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
