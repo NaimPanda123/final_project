@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description:&#xD;&#xA;Open Amazon website&#xD;&#xA;&#xD;&#xA;Input Arguments:&#xD;&#xA;in_AmazonURL&#xD;&#xA;&#xD;&#xA;Output Arguments:&#xD;&#xA;&#xD;&#xA;Pre-Condition:&#xD;&#xA;&#xD;&#xA;Post-Condition:" DisplayName="Amazon_Home_Open" sap:VirtualizedContainerService.HintSize="512,983" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Open Amazon website&#xA;&#xA;Input Arguments:&#xA;in_AmazonURL&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Amazon_Home_Open" sap:VirtualizedContainerService.HintSize="512,983" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Amazon_Home_Open" Name="ComponentName" />
     </Sequence.Variables>
@@ -150,7 +150,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <ui:LogMessage DisplayName="Running - Log Message" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Completed &quot; + ComponentName]">
+    <ui:LogMessage DisplayName="Completed - Log Message" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Completed &quot; + ComponentName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

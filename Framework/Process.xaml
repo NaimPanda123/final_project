@@ -408,7 +408,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">300,336.5 300,386.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FileExistsX sap2010:Annotation.AnnotationText="Check if the txt from InputPath containing the queue form Orchestrator exist" DisplayName="File Exists" Exists="[IsFileExist]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]">
+            <ui:FileExistsX sap2010:Annotation.AnnotationText="Check if the txt from InputPath containing the queue form Orchestrator exist" DisplayName="Item - File Exists" Exists="[IsFileExist]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -436,7 +436,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">110.5,463.5 110.5,513.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Read text file from input path folder " Content="[ExtractedText]" DisplayName="Read Text File" FileName="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="ReadTextFile_3">
+                    <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Read text file from input path folder " Content="[ExtractedText]" DisplayName="Item - Read Text File" FileName="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="ReadTextFile_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -452,7 +452,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">210.5,526 300,526 300,556.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                        <ui:MultipleAssign DisplayName="Index - Multiple Assign" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -493,7 +493,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">110.5,633.5 110.5,683.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap2010:Annotation.AnnotationText="Get current item from &#xD;&#xA;text file" DisplayName="Assign - Current Item" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign sap2010:Annotation.AnnotationText="Get current item from &#xA;text file" DisplayName="Current Item - Assign" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="Assign_6">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Currentitem]</OutArgument>
                                   </Assign.To>
@@ -595,7 +595,7 @@
                                                         <av:PointCollection x:Key="ConnectorLocation">210.5,1239.5 300,1239.5 300,643.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap2010:Annotation.AnnotationText="Increment the index by 1" DisplayName="Assign - Current Index" sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                    <Assign sap2010:Annotation.AnnotationText="Increment the index by 1" DisplayName="Current Index - Assign" sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Assign_7">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Int32">[CurrentIndex]</OutArgument>
                                                       </Assign.To>
@@ -637,7 +637,7 @@
                         <av:Size x:Key="ShapeSize">200,67</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Throw sap2010:Annotation.AnnotationText="If text file not exist in the input path folder" Exception="[new BusinessRuleException(in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot; + &quot; Not Found&quot;)]" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="Throw_3">
+                    <Throw sap2010:Annotation.AnnotationText="If text file not exist in the input path folder" DisplayName="Business - Throw" Exception="[new BusinessRuleException(in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot; + &quot; Not Found&quot;)]" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="Throw_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

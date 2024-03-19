@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2774,2032</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1916</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Excel_Write_ItemDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Write into excel file the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;in_dt_Item&#xA;in_People&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition&#xA;&#xA;Post-Condition" DisplayName="Excel_Write_ItemDetails" sap:VirtualizedContainerService.HintSize="693,1967" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Write into excel file the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;in_dt_Item&#xA;in_People&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition&#xA;&#xA;Post-Condition" DisplayName="Excel_Write_ItemDetails" sap:VirtualizedContainerService.HintSize="693,1851" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Excel_Write_ItemDetails" Name="ComponentName" />
     </Sequence.Variables>
@@ -156,8 +156,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:WriteRangeX Destination="[Excel.Sheet(in_Item)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="439,199" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[in_dt_Item]" />
-                    <ueab:AutoFitX Columns="True" DisplayName="Autofit Range" sap:VirtualizedContainerService.HintSize="439,156" sap2010:WorkflowViewState.IdRef="AutoFitX_1" Range="[Excel.Sheet(in_Item)]" Rows="True" />
+                    <ueab:WriteRangeX Destination="[Excel.Sheet(in_Item)]" DisplayName="Item - Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="439,199" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[in_dt_Item]" />
+                    <ueab:AutoFitX Columns="True" DisplayName="Body - Autofit Range" sap:VirtualizedContainerService.HintSize="439,156" sap2010:WorkflowViewState.IdRef="AutoFitX_1" Range="[Excel.Sheet(in_Item)]" Rows="True" />
                     <ueab:FormatRangeX DisplayName="Body - Format Cells" sap:VirtualizedContainerService.HintSize="439,178" sap2010:WorkflowViewState.IdRef="FormatRangeX_1" Range="[Excel.Sheet(in_Item)]">
                       <ueab:FormatRangeX.Alignment>
                         <ui:AlignmentOptions HorizontalAlignment="xlHAlignLeft" VerticalAlignment="xlVAlignCenter" WrapText="True" />
@@ -196,10 +196,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <ui:LogMessage DisplayName="Completed - Log Message" sap:VirtualizedContainerService.HintSize="631,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Completed &quot; + ComponentName]">
+    <ui:LogMessage DisplayName="Completed - Log Message" sap:VirtualizedContainerService.HintSize="631,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Completed &quot; + ComponentName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

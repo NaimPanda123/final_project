@@ -128,7 +128,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Assign sap:VirtualizedContainerService.HintSize="452,122" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Attachments - Assign" sap:VirtualizedContainerService.HintSize="452,122" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[Attachments]</OutArgument>
       </Assign.To>
