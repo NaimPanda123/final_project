@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2774,1757</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1777</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -116,6 +116,10 @@
       <Variable x:TypeArguments="x:String" Name="ExtractedText" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:Boolean" Name="IsFileExist" />
+      <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
+      <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
+      <Variable x:TypeArguments="x:String" Name="CurrentItem" />
+      <Variable x:TypeArguments="x:String" Name="SpecificItem" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -367,13 +371,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Flowchart sap:VirtualizedContainerService.HintSize="634,1283" sap2010:WorkflowViewState.IdRef="Flowchart_5">
-      <Flowchart.Variables>
-        <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
-        <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
-        <Variable x:TypeArguments="x:String" Name="CurrentItem" />
-        <Variable x:TypeArguments="x:String" Name="SpecificItem" />
-      </Flowchart.Variables>
+    <Flowchart sap:VirtualizedContainerService.HintSize="634,1306" sap2010:WorkflowViewState.IdRef="Flowchart_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -513,7 +511,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">110.5,729.5 110.5,779.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current index and item from text file" DisplayName="Current Index/Item - Log Message" sap:VirtualizedContainerService.HintSize="334,172" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Current Item (&quot; + CurrentIndex.toString + &quot;) &quot; + CurrentItem]">
+                                    <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current index and item from text file" DisplayName="Current Index/Item - Log Message" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Current Item (&quot; + CurrentIndex.toString + &quot;) &quot; + CurrentItem]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
