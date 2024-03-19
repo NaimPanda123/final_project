@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1188,1757</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1757</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -111,15 +111,11 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="696,1692" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="696,1712" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExtractedText" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:Boolean" Name="IsFileExist" />
-      <Variable x:TypeArguments="x:String" Name="SpecificItem" />
-      <Variable x:TypeArguments="x:String" Name="CurrentItem" />
-      <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
-      <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -371,7 +367,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Flowchart sap:VirtualizedContainerService.HintSize="634,1286" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+    <Flowchart sap:VirtualizedContainerService.HintSize="634,1283" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
+        <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
+        <Variable x:TypeArguments="x:String" Name="CurrentItem" />
+        <Variable x:TypeArguments="x:String" Name="SpecificItem" />
+      </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -379,7 +381,7 @@
           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
           <av:Size x:Key="ShapeSize">60,75</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,137.5</av:PointCollection>
-          <x:Double x:Key="Height">1226.5</x:Double>
+          <x:Double x:Key="Height">1246.5</x:Double>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
@@ -432,19 +434,25 @@
                   <FlowStep x:Name="__ReferenceID13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">10.5,417.5</av:Point>
-                        <av:Size x:Key="ShapeSize">200,25</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">110.5,442.5 110.5,492.5</av:PointCollection>
+                        <av:Point x:Key="ShapeLocation">10.5,396.5</av:Point>
+                        <av:Size x:Key="ShapeSize">200,67</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">110.5,463.5 110.5,513.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReadTextFile File="{x:Null}" Content="[ExtractedText]" DisplayName="Read Text File" FileName="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
+                    <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Read text file from input path folder " Content="[ExtractedText]" DisplayName="Read Text File" FileName="[in_Config(&quot;InputPath&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Name&quot;).ToString + &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="ReadTextFile_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ReadTextFile>
                     <FlowStep.Next>
                       <FlowStep x:Name="__ReferenceID15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">10.5,492.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">10.5,513.5</av:Point>
                             <av:Size x:Key="ShapeSize">200,25</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">210.5,505 300,505 300,536.5</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">210.5,526 300,526 300,556.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
@@ -474,18 +482,18 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <av:Point x:Key="ShapeLocation">260.5,536.5</av:Point>
+                                <av:Point x:Key="ShapeLocation">260.5,556.5</av:Point>
                                 <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                <av:PointCollection x:Key="TrueConnector">260.5,580 210.5,580</av:PointCollection>
+                                <av:PointCollection x:Key="TrueConnector">260.5,600 210.5,600</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <FlowDecision.True>
                               <FlowStep x:Name="__ReferenceID16">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">10.5,567.5</av:Point>
+                                    <av:Point x:Key="ShapeLocation">10.5,587.5</av:Point>
                                     <av:Size x:Key="ShapeSize">200,25</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">110.5,592.5 110.5,642.5</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">110.5,612.5 110.5,662.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <Assign DisplayName="Assign - Current Item" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="Assign_6">
@@ -500,12 +508,12 @@
                                   <FlowStep x:Name="__ReferenceID20">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">10.5,642.5</av:Point>
+                                        <av:Point x:Key="ShapeLocation">10.5,662.5</av:Point>
                                         <av:Size x:Key="ShapeSize">200,67</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">110.5,709.5 110.5,759.5</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">110.5,729.5 110.5,779.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current index and item from text file" DisplayName="Current Index/Item - Log Message" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Current Item (&quot; + CurrentIndex.toString + &quot;) &quot; + CurrentItem]">
+                                    <ui:LogMessage sap2010:Annotation.AnnotationText="Log the current index and item from text file" DisplayName="Current Index/Item - Log Message" sap:VirtualizedContainerService.HintSize="334,172" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Current Item (&quot; + CurrentIndex.toString + &quot;) &quot; + CurrentItem]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -516,9 +524,9 @@
                                       <FlowStep x:Name="__ReferenceID17">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">10.5,759.5</av:Point>
+                                            <av:Point x:Key="ShapeLocation">10.5,779.5</av:Point>
                                             <av:Size x:Key="ShapeSize">200,67</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">110.5,826.5 110.5,876.5</av:PointCollection>
+                                            <av:PointCollection x:Key="ConnectorLocation">110.5,846.5 110.5,896.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Search Amazon base on the current item from text file" DisplayName="Amazon_Search_SearchAmazon.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Components\Amazon\3 - Execution\Amazon_Search_SearchAmazon.xaml">
@@ -536,9 +544,9 @@
                                           <FlowStep x:Name="__ReferenceID18">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">10.5,876.5</av:Point>
+                                                <av:Point x:Key="ShapeLocation">10.5,896.5</av:Point>
                                                 <av:Size x:Key="ShapeSize">200,67</av:Size>
-                                                <av:PointCollection x:Key="ConnectorLocation">110.5,943.5 110.5,993.5</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">110.5,963.5 110.5,1013.5</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Perform extraction, filtering and sorting of data table" DisplayName="Amazon_Extract_ItemDetails.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,67" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Components\Amazon\3 - Execution\Amazon_Extract_ItemDetails.xaml">
@@ -557,9 +565,9 @@
                                               <FlowStep x:Name="__ReferenceID19">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">10.5,993.5</av:Point>
+                                                    <av:Point x:Key="ShapeLocation">10.5,1013.5</av:Point>
                                                     <av:Size x:Key="ShapeSize">200,127</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">110.5,1120.5 110.5,1170.5</av:PointCollection>
+                                                    <av:PointCollection x:Key="ConnectorLocation">110.5,1140.5 110.5,1190.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Write into excel fiile the processed data table and give a file name base on current queue from Orchestrator and segragation of sheet names base on items from text file" DisplayName="Excel_Write_ItemDetails.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,127" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Components\Excel\Excel_Write_ItemDetails.xaml">
@@ -580,9 +588,9 @@
                                                   <FlowStep x:Name="__ReferenceID21">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">10.5,1170.5</av:Point>
+                                                        <av:Point x:Key="ShapeLocation">10.5,1190.5</av:Point>
                                                         <av:Size x:Key="ShapeSize">200,56</av:Size>
-                                                        <av:PointCollection x:Key="ConnectorLocation">210.5,1198.5 300,1198.5 300,623.5</av:PointCollection>
+                                                        <av:PointCollection x:Key="ConnectorLocation">210.5,1218.5 300,1218.5 300,643.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <Assign sap2010:Annotation.AnnotationText="Increment the index by 1" DisplayName="Assign - Increment Current Item" sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Assign_7">
