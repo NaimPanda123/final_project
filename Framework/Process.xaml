@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>686,1685</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1188,1757</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -116,6 +116,10 @@
       <Variable x:TypeArguments="x:String" Name="ExtractedText" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:Boolean" Name="IsFileExist" />
+      <Variable x:TypeArguments="x:String" Name="SpecificItem" />
+      <Variable x:TypeArguments="x:String" Name="CurrentItem" />
+      <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
+      <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -368,12 +372,6 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <Flowchart sap:VirtualizedContainerService.HintSize="634,1286" sap2010:WorkflowViewState.IdRef="Flowchart_5">
-      <Flowchart.Variables>
-        <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
-        <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
-        <Variable x:TypeArguments="x:String" Name="CurrentItem" />
-        <Variable x:TypeArguments="x:String" Name="SpecificItem" />
-      </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
