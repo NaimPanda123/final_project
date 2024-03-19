@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1188,1123</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,1098</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Outlook_SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -101,7 +101,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description&#xA;Attach and send the output files to the respective recipient&#xA;&#xA;Input Arguments:&#xA;in_Recipient&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Outlook_SendEmail" sap:VirtualizedContainerService.HintSize="514,1058" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description&#xA;Attach and send the output files to the respective recipient&#xA;&#xA;Input Arguments:&#xA;in_Recipient&#xD;&#xA;in_Cc&#xA;in_OutputPath&#xA;&#xA;Output Arguments:&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Outlook_SendEmail" sap:VirtualizedContainerService.HintSize="514,1033" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Outlook_SendEmail" Name="ComponentName" />
       <Variable x:TypeArguments="s:String[]" Name="Attachments" />
@@ -136,7 +136,7 @@
         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(in_OutputPath)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,413" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,373" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
