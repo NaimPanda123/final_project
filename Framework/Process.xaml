@@ -119,7 +119,6 @@
       <Variable x:TypeArguments="x:Int32" Name="TotalIndex" />
       <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
       <Variable x:TypeArguments="x:String" Name="CurrentItem" />
-      <Variable x:TypeArguments="x:String" Name="SpecificItem" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
