@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2774,2653</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2774,2804</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Amazon_Search_SearchAmazon_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,7 +122,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Perform extraction, filtering and sorting of data table&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;&#xA;Output Arguments:&#xA;out_dt_SortedItem&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="784,2588" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;Perform extraction, filtering and sorting of data table&#xA;&#xA;Input Arguments:&#xA;in_Item&#xA;&#xA;Output Arguments:&#xA;out_dt_SortedItem&#xA;&#xA;Pre-Condition:&#xA;&#xA;Post-Condition:" DisplayName="Amazon_Search_SearchAmazon" sap:VirtualizedContainerService.HintSize="784,2739" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Item" />
       <Variable x:TypeArguments="x:String" Default="Amazon_Extract_ItemDetails" Name="ComponentName" />
@@ -150,13 +150,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="722,2065" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Amazon.com. Spend less. Smile more." sap:VirtualizedContainerService.HintSize="722,2216" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ba3d81ab-b56e-47b2-9721-fe7157364015" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,1808" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,1959" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,13 +220,13 @@
                 <uix:TargetAnchorable DesignTimeRectangle="279, 208, 789, 13393" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' parentid='search' tag='DIV' /&gt;" Guid="c8cd6d06-9dc6-4d5f-8c57-af3e4d597ff4" InformativeScreenshot="3f34e41ee9e13682fdaa4eae36b6e8c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.com : Chef Apron' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Item]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,862" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Item]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,1013" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,658" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,809" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="newPrice" />
                     </Sequence.Variables>
@@ -235,7 +235,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[string.IsNullOrEmpty(CurrentRow(&quot;Price&quot;).ToString) = false]" sap:VirtualizedContainerService.HintSize="530,573" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[string.IsNullOrEmpty(CurrentRow(&quot;Price&quot;).ToString) = false]" sap:VirtualizedContainerService.HintSize="530,724" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,312" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
@@ -262,12 +262,13 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Price - Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Item has no Price&quot;]" />
                         </Sequence>
                       </If.Else>
                     </If>
@@ -307,7 +308,7 @@
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
-            <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Price" DataTable="[dt_FilteredItem]" DisplayName="Item - Sort Data Table" sap:VirtualizedContainerService.HintSize="530,105" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[out_dt_SortedItem]" SortOrder="Descending" />
+            <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Price" DataTable="[dt_FilteredItem]" DisplayName="Item - Sort Data Table" sap:VirtualizedContainerService.HintSize="626,105" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[out_dt_SortedItem]" SortOrder="Descending" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
